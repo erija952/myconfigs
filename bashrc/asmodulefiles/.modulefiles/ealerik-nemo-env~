@@ -1,0 +1,19 @@
+#%Module1.0
+
+#setenv LOCAL_WORKSPACE /local/$env(LOGNAME)/workspace
+#setenv ECLIPSE_WORKSPACE /local/$env(LOGNAME)/workspace
+
+#module add ltesim-make
+#prepend-path PATH $env(ECLIPSE_WORKSPACE)/uctool/build
+
+#setenv jrubyGemsRoot /home/$env(USER)/.gem/jruby/1.8/gems
+#setenv jmx4rVersion 0.0.5
+
+#prepend-path PATH /scripts
+
+prepend-path PATH . 
+
+#setenv ECLIPSE_WORKSPACE /local/$env(LOGNAME)/workspace
+
+#shortcuts
+#set-alias valgrind "valgrind --leak-check=full"	

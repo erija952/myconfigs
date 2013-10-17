@@ -1,0 +1,66 @@
+# A nicer xterm with scrollback and scrollbar and titles
+alias xterm="xterm -sb -sl 10000  -T \"xterm@$HOST\" -n \"xterm@$HOST\" -e bash"
+
+export HISTSIZE=100000
+export HISTTIMEFORMAT="%c # "
+
+umask 2
+
+# Prompt
+export PS1="[\u@\h \W]\$ "
+
+GOT_MODULES=no
+
+if [ -f /proj/ltesim/app/modules/3.1.6/`/proj/ltesim/scripts/config.guess`/init/bash ]; then 
+    source /proj/ltesim/app/modules/3.1.6/`/proj/ltesim/scripts/config.guess`/init/bash
+    GOT_MODULES=yes
+elif [ -f /app/modules/3.1.6/init/bash ]; then
+    source /app/modules/3.1.6/init/bash
+    GOT_MODULES=yes
+fi
+
+#   if [ -d /env/common/allmodules/base ] ; then
+#        #module use /env/common/allmodules/base
+#	module use /env/common/modules
+#	MODULES_DIR=/env/common/allmodules/base
+#        GOT_MODULES=yes
+#    elif [ -d /app/modules/modulefiles ] ; then
+#        module use /app/modules/modulefiles
+#	MODULES_DIR=/app/modules/modulefiles
+#        GOT_MODULES=yes
+#    fi
+
+if [ -d ~/.modulefiles ]; then
+    module use ~/.modulefiles
+fi
+
+if [ $GOT_MODULES = yes ] ; then
+    #module use /proj/ltesim/usr/ealerik/build/modulefiles
+    module use /proj/ltesim/app/modulefiles
+
+    module add ealerik-ltesim-env
+    module add ealerik-ws-env
+fi
+
+#source ~/.hg-completion.bash
+source /proj/ltesim/usr/$LOGNAME/.bashrc_prompt
+source /proj/ltesim/usr/$LOGNAME/.git-completion
+
+
+alias ff='find . -name \!* -print'
+alias ll='ls -la'
+alias lg='ls -lagF \!* | less'
+alias less='less -i'
+alias l='less -i'
+alias ec='emacsclient --no-wait'
+alias ssh='ssh -X'
+
+
+clean_ws() { sed -i 's/[\t ]*$//' $*; }
+
+
+# Added by autojump install.sh
+#source /home/xdavhag/p/build/app/autojump/34419c3eae6887e8cbc4420d4e97d383923153ec/etc/profile.d/autojump.bash
+#source /etc/profile.d/autojump.bash
+
+source  /proj/ltesim/maven/apache-maven-2.2.1/conf/setupPaths.sh

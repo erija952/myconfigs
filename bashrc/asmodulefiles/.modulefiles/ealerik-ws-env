@@ -1,0 +1,16 @@
+#%Module1.0
+
+setenv LESS -MXR
+setenv EDITOR emacsclient
+
+set-alias cgrep "grep --color=always"
+set-alias cdl "cd `ls -td * | head -1`"
+set-alias cp "cp -i"
+set-alias mv "mv -i"
+set-alias rm "rm -i"
+
+set-alias ls "ls -F --color=auto"
+set-alias l less
+set-alias h history
+#set-alias git-env "module add ealerik-git-env"
+set-alias lwget "wget --no-proxy"

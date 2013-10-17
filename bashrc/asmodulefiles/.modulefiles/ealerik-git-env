@@ -1,0 +1,6 @@
+#%Module1.0
+
+set workspace /local/$env(LOGNAME)/git-workspace
+setenv ECLIPSE_WORKSPACE $workspace
+# prepend-path PATH ~/bin/build
+

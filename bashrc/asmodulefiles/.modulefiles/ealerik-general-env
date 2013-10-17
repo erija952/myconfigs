@@ -1,0 +1,35 @@
+#%Module1.0
+
+setenv LOCAL_WORKSPACE /local/$env(LOGNAME)/workspace
+    
+module add erlang
+module add gnuplot
+
+if { [file exists /env/common] } { 
+   module add python/2.6.2
+   module add gcc/4.4.1
+}
+
+prepend-path PATH /proj/ltesim/usr/$env(LOGNAME)/bin
+
+prepend-path PATH ~/scripts
+
+prepend-path PATH $env(HOME)/bin
+
+prepend-path PATH . 
+prepend-path LD_LIBRARY_PATH /app/gcc/4.4.1/lib64
+
+# ccache
+setenv CCACHE_NLEVELS 3
+setenv CCACHE_NOLINK true
+setenv CCACHE_UMASK 002
+
+#shortcuts and aliases
+#set-alias helsync "rsync -aP --del $ECLIPSE_WORKSPACE/ $PROJ_HOME"
+#set-alias terminator "terminator -x bash"
+set-alias oo "soffice"
+
+set-alias eclipseNew "nohup /local/erija952/eclipse-helios-new/eclipse -vm /proj/ltesim/app/jdk/jdk1.6.0_24_JDK7Sctp/bin/java -vmargs -Xms256M -Xmx1024M -XX:PermSize=512M -XX:MaxPermSize=768M >> /dev/null 2>&1" 
+
+
+
