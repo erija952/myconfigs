@@ -44,7 +44,7 @@ git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[0;31m\]$(date +%H:%M)\[\033[00m\] ${debian_chroot:+($debian_chroot)}\[\033[01;30m\]\u:\[\033[01;34m\]\w\[\033[00m\] \[\033[01;35m\]$(parse_git_branch)\[\033[00m\]> '
+    PS1='\[\033[0;31m\]$(date +%H:%M)\[\033[00m\] ${debian_chroot:+($debian_chroot)}\[\033[01;30m\]\u@\h:\[\033[01;34m\]\w\[\033[00m\] \[\033[01;35m\]$(parse_git_branch)\[\033[00m\]> '
 else
     PS1='$(date +%H:%M) ${debian_chroot:+($debian_chroot)}\u@\h:\w $(parse_git_branch)\$ '
 fi
