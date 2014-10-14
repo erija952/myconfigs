@@ -18,3 +18,12 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ec='emacsclient -n'
+
+#alias eclipseN='sudo /opt/eclipse/eclipse -vmargs -Xms256M -Xmx1024M -XX:PermSize=512M -XX:MaxPermSize=768M >> /dev$
+
+# Aliases for directory control
+alias p='pushd'
+alias o='popd'
+alias d='dirs -v'
+alias dc='dirs -c'
+
