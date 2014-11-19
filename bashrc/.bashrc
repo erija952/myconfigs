@@ -91,3 +91,7 @@ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
 ## Git achievments: Add [achievement] \n upload = true to .gitconfig
 ##export PATH="$PATH:/home/eral/git-achievements"
 ##alias git="git-achievements" 
+
+dirs -c
+2>/dev/null 1>/dev/null pushd ~
+
