@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+#In order to save info from multiple terminals, add this line to /etc/bash.bashrc. It will
+#save to history before command is executed
+export PROMPT_COMMAND='history -a'
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -94,4 +98,4 @@ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
 
 dirs -c
 2>/dev/null 1>/dev/null pushd ~
-
+2>/dev/null 1>/dev/null pushd /home/eral/
