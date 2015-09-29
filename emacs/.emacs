@@ -10,6 +10,9 @@
 ;; CUSTOMIZATION ;;
 ;;---------------------;;
 
+;;Allow dead-tilde keys
+(require 'iso-transl)
+
 ;; CUA mode on
 (cua-mode t)
 
